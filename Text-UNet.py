@@ -29,9 +29,9 @@ class CrossAttention(nn.Module):
         return h4
     
 
-class UNetText3D(nn.Module):
+class Text-UNet-3D(nn.Module):
     def __init__(self, inChannel, outChannel, fChannel=32, bilinear=True):
-        super(UNetText3D, self).__init__()
+        super(Text-UNet-3D, self).__init__()
         self.inChannel = inChannel
         self.outChannel = outChannel
         self.fChannel=fChannel
@@ -79,7 +79,7 @@ class UNetText3D(nn.Module):
     
 
 if __name__ == '__main__':
-    model1=UNetText3D(1,1,fChannel=32)
+    model1=Text-UNet-3D(1,1,fChannel=32)
     input=torch.randn(size=[1,1,64,64,64])
     text=torch.randn(size=[1,512,768])
     output1=model1(input,text)
